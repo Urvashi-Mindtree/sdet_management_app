@@ -1,0 +1,18 @@
+<h1>TraineeModule#assign</h1>
+<p>Find me in app/views/trainee_module/assign.html.erb</p>
+<table>
+	<tr>
+		<th>Course Name</th>
+		<th>Assign Date</th>
+		<th>Course End Date</th>
+	</tr>
+	<% @trainee.each do |trainee| %>
+	<tr>
+		<td><%= trainee.course.course_name %></td>
+		<td><%= trainee.assign_date %></td>
+		<td><%= trainee.course.end_date %></td>
+	</tr>
+	<% end %>
+
+</table>
+<%= link_to 'Home', root_path %>

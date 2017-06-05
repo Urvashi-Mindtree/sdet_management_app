@@ -1,0 +1,34 @@
+<%= form_with(model: trainee, local: true) do |form| %>
+  <% if trainee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trainee.errors.count, "error") %> prohibited this trainee from being saved:</h2>
+
+      <ul>
+      <% trainee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="actions">
+	<p>
+    <%= form.label :trainee_name %><br>
+    <%= form.text_field :trainee_name %>
+  </p>
+ 
+  <p>
+  <%= form.label :course_id %></br>
+  	<%=form.collection_select  :course_id, Course.all, :id, :course_name, :prompt => "Select a course" %>
+  </p>
+  <p>
+   <%= form.label :status %></br>
+    <%= form.label :status, "Yes", :value => "true"  %>
+    <%= form.radio_button :status, true %>
+    <%= form.label :status, "No", :value => "false" %>
+    <%= form.radio_button :status, false, :checked => true %>
+  </p>
+ 
+    <%= form.submit "Create"%>
+  </div>
+<% end %>

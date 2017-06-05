@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<table>
+<tr><th>Course Name</th><th>Start Date</th><th>End Date</th><th>List of Students</th></tr>
+<tr><td><%= @course.course_name%></td>
+<td><%= @course.start_date%></td>
+<td><%= @course.end_date%></td>
+<td><%= @trainee_count%></td></tr>
+</table>
+</br>
+<%= link_to 'Edit', edit_course_path(@course) %> 
+
+<%= link_to 'Course', courses_path %>
+
+<%= link_to 'Home', root_path %>

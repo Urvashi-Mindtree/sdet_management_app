@@ -1,0 +1,59 @@
+
+<%= form_with(model: trainee, local: true)  do |form| %>
+  <% if trainee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trainee.errors.count, "error") %> prohibited this trainee from being saved:</h2>
+
+      <ul>
+      <% trainee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>" color: orange><%= value %></div>
+  <% end %>
+
+
+  <table>
+	<tr>
+		<td><%= form.label :trainee_name %></td>
+		<td><%= form.text_field :trainee_name %></td>
+	</tr> 
+	<tr>
+		<td><%= form.label :course_id %></td>
+		<td><%=form.collection_select  :course_id, Course.all, :id, :course_name, :prompt => "Select a course" %></td>
+	</tr>
+	<tr>
+		<td><%= form.label :Course_start_date %></td>
+		<td><%= form.text_field :match_start_date ,value:"" ,:readonly => true %></td>
+	</tr>
+	<tr> 
+		<td><%= form.label :Course_end_date %></td>
+		<td><%= form.text_field :match_end_date , :readonly => true %></td>
+	</tr>
+	<tr>
+		<td><%= form.label :email %></td>
+		<td><%= form.email_field :trainee_email %></td>
+	</tr>
+    <tr>
+		<td><%= form.label :status %></td>
+		<td><%= form.label :status, "In Progress" %> </td>
+		<td><%= form.radio_button :status,"In Progress", :checked => true%></td>
+		<td><%= form.label :status, "Completed" %></td>
+		<td><%= form.radio_button :status, 'Completed' %></td>
+	</tr>
+	<tr>
+		<td><%= form.label :assign_date %></td>
+		<td><%= form.date_field :assign_date %></td>
+    </tr>
+	<tr>
+    <td><%= form.submit "Create"%></td>
+	</tr>
+</table>
+  
+<% end %>
+
+
+
