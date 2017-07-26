@@ -1,0 +1,30 @@
+.my-nav{
+	background-color:#87CEFA;
+	color: black;
+}
+
+.my-nav .navbar-brand{
+	color: black;
+	font-size: 1.6em;
+}
+
+.my-nav .collapse ul li a{
+	color: black;
+	font-size: 1.2em;
+}
+
+.my-nav .collapse ul li a:hover{
+	color: white;
+}
+.my-nav .collapse ul li a:focus{
+	color: teal;
+}
+
+body{
+ margin-top: 50px;
+}
+
+.tab-pane p {
+color: #87CEFA;
+font-size: 1.8em;
+}

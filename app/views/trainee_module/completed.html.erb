@@ -1,0 +1,36 @@
+</br>
+</br>
+</br>
+<h1>Completed Courses</h1>
+<table class="table">
+	<tr>
+		<th>Course Name</th>
+		<th>Assign Date</th>
+		<th>Status</th>
+	</tr>
+	<% @trainee_completed.each do |trainee| %>
+	<tr>
+		<td><%= trainee.course.course_name %></td>
+		<td><%= trainee.assign_date %></td>
+		<td><%= trainee.status %></td>
+	</tr>
+	<% end %>
+
+</table>
+<h1>In Progress Courses</h1>
+<table class="table">
+	<tr>
+		<th>Course Name</th>
+		<th>Assign Date</th>
+		<th>Status</th>
+	</tr>
+	<% @trainee_in_progress.each do |trainee| %>
+	<tr>
+		<td><%= trainee.course.course_name %></td>
+		<td><%= trainee.assign_date %></td>
+		<td><%= trainee.status %></td>
+	</tr>
+	<% end %>
+
+</table>
+

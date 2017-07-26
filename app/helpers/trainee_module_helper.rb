@@ -1,0 +1,2 @@
+module TraineeModuleHelper
+end
